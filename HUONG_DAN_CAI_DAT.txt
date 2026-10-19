@@ -1,0 +1,38 @@
+========================================================================
+     HUONG DAN CAI DAT & SU DUNG VMAX TECH AUTOMATION SUITE
+========================================================================
+Phien ban: v25.5.8 Pro
+Thuong hieu: VMAX Tech (http://vmaxtech.vn/)
+He dieu hanh: Windows 10 / Windows 11 (64-bit)
+
+------------------------------------------------------------------------
+CACH 1: CAI DAT BANG TRINH CAI DAT WINDOWS (SETUP WIZARD)
+------------------------------------------------------------------------
+1. Click dup vao file: CAI_DAT.bat (ngay thu muc nay)
+   Hoac mo thu muc "release" va chay file:
+   VMAX Tech Automation-Setup-25.5.8.exe
+
+2. Trinh cai dat se mo len:
+   - Cho phep ban chon thu muc cai dat mong muon.
+   - Tu dong tao bieu tuong Shortcut tren man hinh Desktop va Start Menu.
+   - Tich hop san tinh nang go cai dat (Uninstall) chuan Windows.
+
+3. Sau khi cai dat xong, chi can nhan vao bieu tuong VMAX Tech Automation
+   tren man hinh Desktop de su dung!
+
+------------------------------------------------------------------------
+CACH 2: CHAY NGAY BAN PORTABLE (KHONG CAN CAI DAT)
+------------------------------------------------------------------------
+Neu ban muon chay ngay lap tuc hoac chep sang may tinh khac:
+1. Click dup vao file: CHAY_NGAY.bat (ngay thu muc nay)
+   Hoac vao thu muc "release" va chay:
+   VMAX Tech Automation-Portable-25.5.8.exe
+
+------------------------------------------------------------------------
+THONG TIN PHAN MEM:
+------------------------------------------------------------------------
+- Co so du lieu: Tich hop san 244 tai khoan goc trong SQLite WAL.
+- Trinh duyet: Playwright Stealth chong Checkpoint, Profile doc lap.
+- Giao dien: Thuong hieu VMAX Tech (Xanh Laser, Luc bao, VMAX Space).
+- Hotkey: Ctrl+K (Command Palette), Ctrl+B (Thu gon sidebar), Ctrl+F (Tim kiem).
+========================================================================

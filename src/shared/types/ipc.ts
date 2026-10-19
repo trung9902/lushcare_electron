@@ -1,0 +1,48 @@
+export interface IpcResponse<T = any> {
+  success: boolean;
+  data?: T;
+  error?: {
+    code: string;
+    message: string;
+    details?: any;
+  };
+  timestamp: number;
+}
+
+export const ErrorCodes = {
+  // Validation
+  ERR_INVALID_PAYLOAD: 'ERR_INVALID_PAYLOAD',
+  ERR_DUPLICATE_ENTRY: 'ERR_DUPLICATE_ENTRY',
+
+  // Database
+  ERR_DB_QUERY_FAILED: 'ERR_DB_QUERY_FAILED',
+  ERR_DB_LOCKED: 'ERR_DB_LOCKED',
+  ERR_RECORD_NOT_FOUND: 'ERR_RECORD_NOT_FOUND',
+
+  // Browser
+  ERR_CHROMIUM_NOT_FOUND: 'ERR_CHROMIUM_NOT_FOUND',
+  ERR_BROWSER_LAUNCH: 'ERR_BROWSER_LAUNCH',
+  ERR_PROFILE_IN_USE: 'ERR_PROFILE_IN_USE',
+  ERR_NAVIGATION_TIMEOUT: 'ERR_NAVIGATION_TIMEOUT',
+  ERR_BROWSER_NOT_RUNNING: 'ERR_BROWSER_NOT_RUNNING',
+
+  // Proxy
+  ERR_PROXY_CONNECTION: 'ERR_PROXY_CONNECTION',
+  ERR_PROXY_ROTATION: 'ERR_PROXY_ROTATION',
+  ERR_PROXY_COOLDOWN: 'ERR_PROXY_COOLDOWN',
+
+  // Authentication & Checkpoint
+  ERR_LOGIN_FAILED: 'ERR_LOGIN_FAILED',
+  ERR_2FA_INVALID_KEY: 'ERR_2FA_INVALID_KEY',
+  ERR_CHECKPOINT_HIT: 'ERR_CHECKPOINT_HIT',
+
+  // Runner
+  ERR_RUNNER_ALREADY_BUSY: 'ERR_RUNNER_ALREADY_BUSY',
+  ERR_SCENARIO_EMPTY: 'ERR_SCENARIO_EMPTY',
+
+  // System
+  ERR_IO_PERMISSION: 'ERR_IO_PERMISSION',
+  ERR_INTERNAL_EXCEPTION: 'ERR_INTERNAL_EXCEPTION',
+} as const;
+
+export type ErrorCode = (typeof ErrorCodes)[keyof typeof ErrorCodes] | string;

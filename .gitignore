@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build and Packaging outputs
+dist/
+release/
+build/
+*.exe
+*.zip
+*.tar.gz
+*.rar
+
+# Databases & Sensitive accounts data
+database/*.sqlite
+database/*.sqlite-wal
+database/*.sqlite-shm
+database/*.db
+database/*.db-wal
+database/*.db-shm
+
+# Browser profiles and user data
+profiles/
+chrome_profiles/
+cache/
+scratch/
+tmp/
+*.log
+
+# Screenshots & temp files
+*.png
+*.jpg
+*.jpeg
+
+# Environment & Editor
+.env
+.env.local
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

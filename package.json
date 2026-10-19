@@ -1,0 +1,97 @@
+{
+  "name": "vmax-automation-suite",
+  "version": "25.5.8",
+  "description": "VMAX Tech - Multi-Account Automation & Management Suite",
+  "productName": "VMAX Tech Automation",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build:renderer": "vite build",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build": "npm run build:renderer && npm run build:main",
+    "start": "electron dist/main/index.js",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && electron-builder --win nsis",
+    "dist:portable": "npm run build && electron-builder --win portable",
+    "dist:all": "npm run build && electron-builder --win"
+  },
+  "build": {
+    "appId": "vn.vmaxtech.automation",
+    "productName": "VMAX Tech Automation",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "database/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "database",
+        "to": "database",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "docs/DATABASE_SCHEMA.sql",
+        "to": "docs/DATABASE_SCHEMA.sql"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "VMAX Tech Automation",
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}"
+    }
+  },
+  "dependencies": {
+    "@types/sql.js": "^1.4.11",
+    "axios": "^1.20.0",
+    "lucide-react": "^1.16.0",
+    "otplib": "^12.0.1",
+    "playwright-core": "^1.50.1",
+    "proxy-chain": "^2.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sql.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-table": "^8.21.2",
+    "@tanstack/react-virtual": "^3.13.2",
+    "@types/node": "^22.13.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "^34.2.0",
+    "electron-builder": "^26.15.3",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}
